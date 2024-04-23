@@ -1,6 +1,16 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+plugins {
+    id "jacoco"
+    id "java"
+    id "application"
+    id("org.sonarqube") version "5.0.0.4638"
+}
+sonar {
+  properties {
+    property "sonar.projectKey", "TheRedHatter_hello-world"
+    property "sonar.organization", "theredhatter"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
 
 android {
     compileSdkVersion 29
@@ -27,19 +37,6 @@ android {
         }
     }
 
-}
-plugins {
-    id "jacoco"
-    id "java"
-    id "application"
-    id("org.sonarqube") version "5.0.0.4638"
-}
-sonar {
-  properties {
-    property "sonar.projectKey", "TheRedHatter_hello-world"
-    property "sonar.organization", "theredhatter"
-    property "sonar.host.url", "https://sonarcloud.io"
-  }
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
