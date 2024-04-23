@@ -1,3 +1,6 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 plugins {
     id "jacoco"
     id "java"
