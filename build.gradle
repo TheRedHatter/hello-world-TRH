@@ -29,9 +29,11 @@ android {
 
 }
 plugins {
-  id "org.sonarqube" version "4.4.1.3373"
+    id "jacoco"
+    id "java"
+    id "application"
+    id("org.sonarqube") version "5.0.0.4638"
 }
-
 sonar {
   properties {
     property "sonar.projectKey", "TheRedHatter_hello-world"
